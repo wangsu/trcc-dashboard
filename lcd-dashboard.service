@@ -1,0 +1,14 @@
+[Unit]
+Description=Thermalright LCD Sensor Dashboard
+After=multi-user.target
+
+[Service]
+Type=simple
+User=wangsu
+Environment=QT_QPA_PLATFORM=offscreen
+ExecStart=/home/wangsu/.local/share/pipx/venvs/trcc-linux/bin/python3 /home/wangsu/trcc_dashboard.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
